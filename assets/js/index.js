@@ -15,6 +15,7 @@ class CarouselController {
     this._error = null;
     this._isFetching = false;
     this.nextClick = this.nextClick.bind(this);
+    this.prevClick = this.prevClick.bind(this);
     this.loadData(url);
   }
 
@@ -98,6 +99,13 @@ class CarouselController {
     currentSlide.classList.replace('currentSlide', 'nextSlide');
 
     nextSlide.classList.remove('visibleSlide', 'nextSlide');
+
+    this._carousel.goPrev();
+
+    prevSlide = document.getElementById(this._carousel.prevIndex);
+    prevSlide.classList.add('visibleSlide', 'prevSlide');
+
+
 
 
   };
