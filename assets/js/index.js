@@ -89,6 +89,16 @@ class CarouselController {
   };
 
   prevClick () {
+    let prevSlide = document.getElementById(this._carousel.prevIndex);
+    const currentSlide = document.getElementById(this._carousel.currentIndex);
+    const nextSlide = document.getElementById(this._carousel.nextIndex);
+
+    prevSlide.classList.replace('prevSlide', 'currentSlide');
+
+    currentSlide.classList.replace('currentSlide', 'nextSlide');
+
+    nextSlide.classList.remove('visibleSlide', 'nextSlide');
+
 
   };
 
